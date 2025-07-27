@@ -1,0 +1,385 @@
+<!-- <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoodMusic - About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+<script type="module">
+import { renderNavbar } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
+
+renderNavbar('about');
+document.write(`
+  <div class="container fadeInUp">
+    <h1>About MoodMusic</h1>
+    <div>
+      <p><b>MoodMusic</b> is a mood-driven music recommendation platform. Using musical moods and Spotify API, we help you find the perfect tunes for your emotions.</p>
+      <ul>
+        <li>🎵 Spotify music recommendations for guest or logged-in users (no Spotify login needed)</li>
+        <li>💜 Save favorite tracks and build your mood playlist</li>
+        <li>📖 Keep an emotional diary and track mood analytics</li>
+        <li>⏰ View your recent listening history</li>
+        <li>✨ Beautiful animated theme based on your mood!</li>
+        <li>🌚 Dark mode and accessibility friendly</li>
+      </ul>
+      <hr>
+      <p class="fadeInUp">This open-source project uses <a href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API</a> and is built with Node.js, PostgreSQL, and modern frontend technologies.<br>
+      <a href="https://github.com/your-repo/MoodMusic" target="_blank" rel="noopener">View Source Code</a>
+      </p>
+    </div>
+  </div>
+`);
+renderFooter();
+</script>
+</body>
+</html> -->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoodMusic - About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+<!-- <script type="module">
+import { renderNavbar } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
+
+renderNavbar('about');
+
+const container = document.createElement('div');
+container.className = 'container fadeInUp';
+container.innerHTML = `
+  <h1>About MoodMusic</h1>
+  <div>
+    <p><b>MoodMusic</b> is a mood-driven music recommendation platform. Using musical moods and Spotify API, we help you find the perfect tunes for your emotions.</p>
+    <ul>
+      <li>🎵 Spotify music recommendations for guest or logged-in users (no Spotify login needed)</li>
+      <li>💜 Save favorite tracks and build your mood playlist</li>
+      <li>📖 Keep an emotional diary and track mood analytics</li>
+      <li>⏰ View your recent listening history</li>
+      <li>✨ Beautiful animated theme based on your mood!</li>
+      <li>🌚 Dark mode and accessibility friendly</li>
+    </ul>
+    <hr>
+    <p class="fadeInUp">
+      This open-source project uses <a href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API</a> and is built with Node.js, PostgreSQL, and modern frontend technologies.<br>
+      <a href="https://github.com/your-repo/MoodMusic" target="_blank" rel="noopener">View Source Code</a>
+    </p>
+  </div>
+`;
+
+const navbar = document.querySelector('.navbar');
+if (navbar) {
+  navbar.insertAdjacentElement('afterend', container);
+} else {
+  document.body.insertBefore(container, document.body.firstChild);
+}
+
+renderFooter();
+</script> --><!--
+<script type="module">
+// import { renderNavbar } from './components/navbar.js';
+// import { renderFooter } from './components/footer.js';
+
+// renderNavbar('about');
+
+// const container = document.createElement('div');
+// container.className = 'container fadeInUp';
+// container.innerHTML = `
+//   <h1>About MoodMusic</h1>
+//   <div class="about-cards">
+//     <div class="about-card about-desc">
+//       <p><b>MoodMusic</b> is a mood-driven music recommendation platform. Using musical moods and Spotify API, we help you find the perfect tunes for your emotions.</p>
+//     </div>
+//     <div class="about-card feature-card">
+//       <span class="feature-emoji">🎵</span>
+//       <div class="feature-text">Spotify recommendations for all — no Spotify login required</div>
+//     </div>
+//     <div class="about-card feature-card">
+//       <span class="feature-emoji">💜</span>
+//       <div class="feature-text">Save favorite tracks & build your mood playlist</div>
+//     </div>
+//     <div class="about-card feature-card">
+//       <span class="feature-emoji">📖</span>
+//       <div class="feature-text">Keep an emotional diary and track mood analytics</div>
+//     </div>
+//     <div class="about-card feature-card">
+//       <span class="feature-emoji">⏰</span>
+//       <div class="feature-text">View your recent listening history</div>
+//     </div>
+//     <div class="about-card feature-card">
+//       <span class="feature-emoji">✨</span>
+//       <div class="feature-text">Animated themes based on your mood</div>
+//     </div>
+//     <div class="about-card feature-card">
+//       <span class="feature-emoji">🌚</span>
+//       <div class="feature-text">Dark mode & accessibility friendly</div>
+//     </div>
+//     <div class="about-card about-tech fadeInUp">
+//       <hr>
+//       <p>
+//         This open-source project uses <a href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API</a>, built with Node.js, PostgreSQL, and modern frontend technologies.<br>
+//         <a href="https://github.com/your-repo/MoodMusic" target="_blank" rel="noopener">View Source Code</a>
+//       </p>
+//     </div>
+//   </div>
+// `;
+
+// const navbar = document.querySelector('.navbar');
+// if (navbar) {
+//   navbar.insertAdjacentElement('afterend', container);
+// } else {
+//   document.body.insertBefore(container, document.body.firstChild);
+// }
+
+// renderFooter();
+
+import { renderNavbar } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
+
+renderNavbar('about');
+
+const container = document.createElement('div');
+container.className = 'container about-full fadeInUp';
+container.innerHTML = `
+  <h1 class="about-heading appear">About MoodMusic</h1>
+  <div class="about-cards">
+    <div class="about-card about-desc">
+      <p><b>MoodMusic</b> is a mood-driven music recommendation platform. Using musical moods and Spotify API, we help you find the perfect tunes for your emotions.</p>
+    </div>
+    <div class="about-card feature-card" data-animate="0">
+      <span class="feature-emoji">🎵</span>
+      <div class="feature-text">Spotify recommendations for all — no Spotify login required</div>
+    </div>
+    <div class="about-card feature-card" data-animate="1">
+      <span class="feature-emoji">💜</span>
+      <div class="feature-text">Save favorite tracks & build your mood playlist</div>
+    </div>
+    <div class="about-card feature-card" data-animate="2">
+      <span class="feature-emoji">📖</span>
+      <div class="feature-text">Keep an emotional diary and track mood analytics</div>
+    </div>
+    <div class="about-card feature-card" data-animate="3">
+      <span class="feature-emoji">⏰</span>
+      <div class="feature-text">View your recent listening history</div>
+    </div>
+    <div class="about-card feature-card" data-animate="4">
+      <span class="feature-emoji">✨</span>
+      <div class="feature-text">Animated themes based on your mood</div>
+    </div>
+    <div class="about-card feature-card" data-animate="5">
+      <span class="feature-emoji">🌚</span>
+      <div class="feature-text">Dark mode & accessibility friendly</div>
+    </div>
+    <div class="about-card about-tech fadeInUp">
+      <hr>
+      <p>
+        This open-source project uses <a href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API</a>, built with Node.js, PostgreSQL, and modern frontend technologies.<br>
+        <a href="https://github.com/your-repo/MoodMusic" target="_blank" rel="noopener">View Source Code</a>
+      </p>
+    </div>
+  </div>
+`;
+
+const navbar = document.querySelector('.navbar');
+if (navbar) {
+  navbar.insertAdjacentElement('afterend', container);
+} else {
+  document.body.insertBefore(container, document.body.firstChild);
+}
+
+renderFooter();
+
+// Animate cards in, ripple emoji on hover, heading
+setTimeout(() => {
+  document.querySelectorAll('.about-card.feature-card').forEach((el, i) => {
+    setTimeout(() => el.classList.add('show'), 120 * i);
+    el.addEventListener('mouseenter', () => {
+      const emoji = el.querySelector('.feature-emoji');
+      emoji.classList.add('ripple-emoji');
+      setTimeout(() => emoji.classList.remove('ripple-emoji'), 420);
+    });
+  });
+  document.querySelector('.about-heading').classList.add('puff-in');
+}, 120);
+
+</script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoodMusic - About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+<script type="module">
+// import { renderNavbar } from './components/navbar.js';
+// import { renderFooter } from './components/footer.js';
+
+// renderNavbar('about');
+
+// const container = document.createElement('div');
+// container.className = 'container about-full fadeInUp';
+// container.innerHTML = `
+//   <h1 class="about-heading appear">About MoodMusic</h1>
+//   <div class="about-cards">
+//     <div class="about-card intro-card">
+//       <p>
+//         👋 <b>Welcome!</b><br>
+//         Discover music that matches your mood. Whether you're happy, calm, or thoughtful, MoodMusic recommends the perfect tunes for your moment.<br>
+//         Start exploring and let music lift your spirits!
+//       </p>
+//     </div>
+
+//     <div class="about-card about-desc">
+//       <p><b>MoodMusic</b> is a mood-driven music recommendation platform. Using musical moods and Spotify API, we help you find the perfect tunes for your emotions.</p>
+//     </div>
+//     <div class="about-card feature-card" data-animate="0">
+//       <span class="feature-emoji">🎵</span>
+//       <div class="feature-text">Spotify recommendations for all — no Spotify login required</div>
+//     </div>
+//     <div class="about-card feature-card" data-animate="1">
+//       <span class="feature-emoji">💜</span>
+//       <div class="feature-text">Save favorite tracks & build your mood playlist</div>
+//     </div>
+//     <div class="about-card feature-card" data-animate="2">
+//       <span class="feature-emoji">📖</span>
+//       <div class="feature-text">Keep an emotional diary and track mood analytics</div>
+//     </div>
+//     <div class="about-card feature-card" data-animate="3">
+//       <span class="feature-emoji">⏰</span>
+//       <div class="feature-text">View your recent listening history</div>
+//     </div>
+//     <div class="about-card feature-card" data-animate="4">
+//       <span class="feature-emoji">✨</span>
+//       <div class="feature-text">Animated themes based on your mood</div>
+//     </div>
+//     <div class="about-card feature-card" data-animate="5">
+//       <span class="feature-emoji">🌚</span>
+//       <div class="feature-text">Dark mode & accessibility friendly</div>
+//     </div>
+//     <div class="about-card about-tech fadeInUp">
+//       <hr>
+//       <p>
+//         This open-source project uses <a href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API</a>, built with Node.js, PostgreSQL, and modern frontend technologies.<br>
+//         <a href="https://github.com/your-repo/MoodMusic" target="_blank" rel="noopener">View Source Code</a>
+//       </p>
+//     </div>
+//   </div>
+// `;
+
+// const navbar = document.querySelector('.navbar');
+// if (navbar) {
+//   navbar.insertAdjacentElement('afterend', container);
+// } else {
+//   document.body.insertBefore(container, document.body.firstChild);
+// }
+
+// renderFooter();
+
+// // Animate cards in, ripple emoji on hover, heading
+// setTimeout(() => {
+//   document.querySelectorAll('.about-card.feature-card').forEach((el, i) => {
+//     setTimeout(() => el.classList.add('show'), 120 * i);
+//     el.addEventListener('mouseenter', () => {
+//       const emoji = el.querySelector('.feature-emoji');
+//       emoji.classList.add('ripple-emoji');
+//       setTimeout(() => emoji.classList.remove('ripple-emoji'), 420);
+//     });
+//   });
+//   document.querySelector('.about-heading').classList.add('puff-in');
+// }, 120);
+
+import { renderNavbar } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
+
+renderNavbar('about');
+
+const container = document.createElement('div');
+container.className = 'container about-full fadeInUp';
+container.innerHTML = `
+  <h1 class="about-heading appear">About MoodMusic</h1>
+  <div class="about-cards">
+    <div class="about-card intro-card show">
+      <p>
+        👋 <b>Welcome!</b><br>
+        Discover music that matches your mood. Whether you're happy, calm, or thoughtful, MoodMusic recommends the perfect tunes for your moment.<br>
+        Start exploring and let music lift your spirits!
+      </p>
+    </div>
+    <div class="about-card about-desc show">
+      <p><b>MoodMusic</b> is a mood-driven music recommendation platform. Using musical moods and Spotify API, we help you find the perfect tunes for your emotions.</p>
+    </div>
+    <div class="about-card feature-card" data-animate="0">
+      <span class="feature-emoji">🎵</span>
+      <div class="feature-text">Spotify recommendations for all — no Spotify login required</div>
+    </div>
+    <div class="about-card feature-card" data-animate="1">
+      <span class="feature-emoji">💜</span>
+      <div class="feature-text">Save favorite tracks & build your mood playlist</div>
+    </div>
+    <div class="about-card feature-card" data-animate="2">
+      <span class="feature-emoji">📖</span>
+      <div class="feature-text">Keep an emotional diary and track mood analytics</div>
+    </div>
+    <div class="about-card feature-card" data-animate="3">
+      <span class="feature-emoji">⏰</span>
+      <div class="feature-text">View your recent listening history</div>
+    </div>
+    <div class="about-card feature-card" data-animate="4">
+      <span class="feature-emoji">✨</span>
+      <div class="feature-text">Animated themes based on your mood</div>
+    </div>
+    <div class="about-card feature-card" data-animate="5">
+      <span class="feature-emoji">🌚</span>
+      <div class="feature-text">Dark mode & accessibility friendly</div>
+    </div>
+    <div class="about-card about-tech show fadeInUp">
+      <hr>
+      <p>
+        This open-source project uses <a href="https://developer.spotify.com/documentation/web-api" target="_blank">Spotify API</a>, built with Node.js, PostgreSQL, and modern frontend technologies.<br>
+        <a href="https://github.com/your-repo/MoodMusic" target="_blank" rel="noopener">View Source Code</a>
+      </p>
+    </div>
+  </div>
+`;
+
+const navbar = document.querySelector('.navbar');
+if (navbar) {
+  navbar.insertAdjacentElement('afterend', container);
+} else {
+  document.body.insertBefore(container, document.body.firstChild);
+}
+
+renderFooter();
+
+// Animate feature cards (not intro/about/tech cards)
+setTimeout(() => {
+  document.querySelectorAll('.about-card.feature-card').forEach((el, i) => {
+    setTimeout(() => el.classList.add('show'), 120 * i);
+    el.addEventListener('mouseenter', () => {
+      const emoji = el.querySelector('.feature-emoji');
+      emoji.classList.add('ripple-emoji');
+      setTimeout(() => emoji.classList.remove('ripple-emoji'), 420);
+    });
+  });
+  document.querySelector('.about-heading').classList.add('puff-in');
+}, 120);
+
+</script>
+</body>
+</html>

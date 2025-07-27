@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoodMusic - Mood Based Music Recommendations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+<script type="module">
+import { renderNavbar } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
+import { renderMoodSelector } from './components/moodSelector.js';
+import { fetchRecommendations } from './assets/js/main.js';
+
+renderNavbar('home');
+window.isLoggedIn = !!localStorage.token;
+
+document.write(`
+  <div class="container fadeInUp">
+    <h1>Discover Music for Every Mood</h1>
+    <div id="moodSelector" class="mood-selector"></div>
+    <div id="musicList" class="music-list"></div>
+  </div>
+`);
+
+renderFooter();
+
+let selMood = sessionStorage.getItem('selectedMood') || 'happy';
+renderMoodSelector(selMood, mood=>{
+    sessionStorage.setItem('selectedMood', mood); fetchRecommendations(mood);
+});
+fetchRecommendations(selMood);
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoodMusic - Mood Based Music Recommendations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+<script type="module">
+import { renderNavbar } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
+import { renderMoodSelector } from './components/moodSelector.js';
+import { fetchRecommendations } from './assets/js/main.js';
+
+renderNavbar('home');
+window.isLoggedIn = !!localStorage.token;
+
+// ---- FIX START ----
+const container = document.createElement('div');
+container.className = 'container fadeInUp';
+container.innerHTML = `
+  <h1>Discover Music for Every Mood</h1>
+  <div id="moodSelector" class="mood-selector"></div>
+  <div id="musicList" class="music-list"></div>
+`;
+
+// If navbar rendered, insert after it. Otherwise, insert at top of body.
+const navbar = document.querySelector('.navbar');
+if (navbar) {
+  navbar.insertAdjacentElement('afterend', container);
+} else {
+  document.body.insertBefore(container, document.body.firstChild);
+}
+// ---- FIX END ----
+
+renderFooter();
+
+let selMood = sessionStorage.getItem('selectedMood') || 'happy';
+renderMoodSelector(selMood, mood=>{
+  sessionStorage.setItem('selectedMood', mood); fetchRecommendations(mood);
+});
+fetchRecommendations(selMood);
+</script>
+</body>
+</html>

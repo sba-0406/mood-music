@@ -1,0 +1,138 @@
+/* /* client/assets/css/themes.css
+body.mood-happy {
+    --color-bg: #fff7e7;
+    --color-primary: #FFD700;
+    --color-accent: #FFB700;
+}
+body.mood-sad {
+    --color-bg: #f0f7fc;
+    --color-primary: #74b9ff;
+    --color-accent: #2089dc;
+}
+body.mood-calm {
+    --color-bg: #e6fcff;
+    --color-primary: #65e9f7;
+    --color-accent: #81ecec;
+}
+body.mood-energetic {
+    --color-bg: #fff0e6;
+    --color-primary: #e17055;
+    --color-accent: #fd6e70;
+}
+body.dark-mode {
+    --color-bg: #181322;
+    --color-primary: #ebe4fd;
+    --color-accent: #8d76d6;
+    --color-text: #ffffff;
+} */
+
+
+
+
+
+
+
+
+
+
+/*
+:root {
+    /* Light/Default theme *//*
+    --color-bg: #f8f7fa;
+    --color-primary: #a98ace;
+    --color-accent: #9384d1;
+    --color-lavender: #ede7f6;
+    --color-silver: #e7eaf6;
+    --color-dark: #181322;
+    --color-text: #29223a;
+    --color-white: #fff;
+    --radius: 12px;
+    --transition: 0.4s cubic-bezier(.36,1.28,.45,.99);
+    --shadow: 0 6px 32px #a98ace22;
+}
+
+/* Mood themes override app semantic colors *//*
+body.mood-happy {
+    --color-bg: #fff7e7;
+    --color-primary: #FFD700;
+    --color-accent: #FFB700;
+}
+body.mood-sad {
+    --color-bg: #f0f7fc;
+    --color-primary: #74b9ff;
+    --color-accent: #2089dc;
+}
+body.mood-calm {
+    --color-bg: #e6fcff;
+    --color-primary: #65e9f7;
+    --color-accent: #81ecec;
+}
+body.mood-energetic {
+    --color-bg: #fff0e6;
+    --color-primary: #e17055;
+    --color-accent: #fd6e70;
+}
+
+body.dark-mode {
+    --color-bg: #181322;
+    --color-primary: #ebe4fd;
+    --color-accent: #8d76d6;
+    --color-text: #ffffff;
+} */
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    /* Light/default theme colors */
+    --color-bg: #f8f7fa;
+    --color-primary: #a98ace;
+    --color-accent: #9384d1;
+    --color-lavender: #ede7f6;
+    --color-silver: #e7eaf6;
+    --color-dark: #181322;
+    --color-text: #29223a;
+    --color-white: #fff;
+    --radius: 12px;
+    --transition: 0.4s cubic-bezier(.36,1.28,.45,.99);
+    --shadow: 0 6px 32px #a98ace22;
+}
+
+/* Mood-specific color overrides */
+body.mood-happy {
+    --color-bg: #fff7e7;
+    --color-primary: #FFD700;
+    --color-accent: #FFB700;
+}
+body.mood-sad {
+    --color-bg: #f0f7fc;
+    --color-primary: #74b9ff;
+    --color-accent: #2089dc;
+}
+body.mood-calm {
+    --color-bg: #e6fcff;
+    --color-primary: #65e9f7;
+    --color-accent: #81ecec;
+}
+body.mood-energetic {
+    --color-bg: #fff0e6;
+    --color-primary: #e17055;
+    --color-accent: #fd6e70;
+}
+
+/* Dark mode overrides: softer gray-blue background for comfort */
+body.dark-mode {
+    --color-bg: #23233a;              /* Softer dark gray */
+    --color-primary: #ebe4fd;
+    --color-accent: #8d76d6;
+    --color-text: #eeeeee;
+    background: linear-gradient(135deg, #282840 60%, #242438 100%);
+    color: var(--color-text) !important;
+}

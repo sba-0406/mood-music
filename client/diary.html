@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Emotional Diary | MoodMusic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+  <div id="app"></div> <!-- Container to dynamically insert diary content -->
+
+  <script type="module">
+    import { renderNavbar } from './components/navbar.js';
+    import { renderFooter } from './components/footer.js';
+    import { renderMoodChart } from './assets/js/analytics.js';
+    import { fetchEntries, setupAddEntryHandler } from './assets/js/diary.js';
+
+    renderNavbar('diary');
+    renderFooter();
+
+    const container = document.createElement('div');
+    container.className = 'container fadeInUp';
+    container.innerHTML = `
+      <h1>Your Mood Diary</h1>
+      <div style="margin-bottom:2rem;">
+        <label for="entryMood">Mood</label>
+        <select id="entryMood">
+          <option value="happy">Happy</option>
+          <option value="sad">Sad</option>
+          <option value="energetic">Energetic</option>
+          <option value="calm">Calm</option>
+        </select>
+        <textarea id="entryText" placeholder="Write your feelings..."></textarea>
+        <button class="btn" id="addEntryBtn">Add Entry</button>
+      </div>
+      <h2>Past Entries</h2>
+      <div id="entryList"></div>
+      <h2>Mood Analytics</h2>
+      <div id="moodChart"></div>
+    `;
+
+    document.getElementById('app').appendChild(container);
+
+    // Bind event to Add Entry button and fetch entries after DOM is ready
+    setupAddEntryHandler();
+    fetchEntries();
+
+    window.onload = () => {
+      renderMoodChart('moodChart');
+    };
+  </script>
+</body>
+</html>

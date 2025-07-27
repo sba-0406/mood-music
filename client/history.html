@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recently Played | MoodMusic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+  <div id="pageContent"></div>
+
+  <script type="module">
+    import { renderNavbar } from './components/navbar.js';
+    import { renderFooter } from './components/footer.js';
+    import { fetchHistory } from '../assets/js/history.js';
+
+    async function init() {
+      renderNavbar('history');
+      
+      // Insert main content container into #pageContent
+      const pageContent = document.getElementById('pageContent');
+      pageContent.innerHTML = `
+        <div class="container fadeInUp">
+          <h1>Recently Played Songs</h1>
+          <div id="historyList" class="music-list"></div>
+        </div>
+      `;
+
+      renderFooter();
+
+      // Now fetch and render history list
+      await fetchHistory();
+    }
+
+    // Run init once DOM is loaded
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Playlist | MoodMusic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+<script type="module">
+import { renderNavbar } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
+import '../assets/js/playlist.js';
+
+renderNavbar('playlist');
+document.write(`
+  <div class="container fadeInUp">
+    <h1>Your Favorites Playlist</h1>
+    <div id="favoritesList" class="music-list"></div>
+  </div>
+`);
+renderFooter();
+</script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Your Playlist | MoodMusic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+    <!-- Container for app content -->
+    <div id="app"></div>
+
+    <script type="module">
+        import { renderNavbar } from './components/navbar.js';
+        import { renderFooter } from './components/footer.js';
+        import { fetchFavorites } from '../assets/js/playlist.js';
+
+        // Render navbar with 'playlist' active
+        renderNavbar('playlist');
+
+        // Create and insert main container for Playlist page
+        const container = document.createElement('div');
+        container.className = 'container fadeInUp';
+        container.innerHTML = `
+            <h1>Your Favorites Playlist</h1>
+            <div id="favoritesList" class="music-list"></div>
+        `;
+        document.getElementById('app').appendChild(container);
+
+        // Render footer after content
+        renderFooter();
+
+        // Fetch favorites when the DOM is ready and elements exist
+        fetchFavorites();
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup | MoodMusic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+<script type="module">
+import { renderNavbar } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
+
+renderNavbar('signup');
+
+document.write(`
+  <div class="container fadeInUp">
+    <h2>Signup</h2>
+    <form id="signupForm" autocomplete="on">
+      <div class="form-group">
+        <label>Name</label>
+        <input name="name" type="text" required autocomplete="name" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input name="email" type="email" required autocomplete="email"/>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input name="password" type="password" required autocomplete="new-password"/>
+      </div>
+      <div id="signupError" style="color:#df2c61;margin-bottom:.7em;"></div>
+      <button class="btn" type="submit">Register</button>
+      <a href="login.html" class="btn" style="background:#b3aad6;">Back to Login</a>
+    </form>
+  </div>
+`);
+renderFooter();
+
+const form = document.getElementById('signupForm');
+form.onsubmit = async function(e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
+  const res = await fetch('/api/auth/signup', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  });
+  const out = await res.json();
+  if(out.token) {
+    localStorage.token = out.token;
+    window.location = "index.html";
+  } else {
+    document.getElementById('signupError').innerText = out.error||'Could not Signup';
+  }
+};
+</script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Signup | MoodMusic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+    <div id="app"></div> <!-- Container div for our content -->
+
+    <script type="module">
+    import { renderNavbar } from './components/navbar.js';
+    import { renderFooter } from './components/footer.js';
+
+    // Render Navbar and Footer immediately
+    renderNavbar('signup');
+    renderFooter();
+
+    // Create container element with login form HTML
+    const container = document.createElement('div');
+    container.className = 'container fadeInUp';
+    container.innerHTML = `
+      <h2>Signup</h2>
+      <form id="signupForm" autocomplete="on">
+        <div class="form-group">
+          <label>Name</label>
+          <input name="name" type="text" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input name="email" type="email" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input name="password" type="password" required autocomplete="new-password" />
+        </div>
+        <div id="signupError" style="color:#df2c61; margin-bottom:0.7em;"></div>
+        <button class="btn" type="submit">Register</button>
+        <a href="login.html" class="btn" style="background:#b3aad6;">Back to Login</a>
+      </form>
+    `;
+
+    // Append container to our app div
+    document.getElementById('app').appendChild(container);
+
+    // Attach submit handler once form exists in DOM
+    const form = document.getElementById('signupForm');
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const res = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const out = await res.json();
+      if (out.token) {
+        localStorage.token = out.token;
+        window.location = 'index.html';
+      } else {
+        document.getElementById('signupError').innerText = out.error || 'Could not Signup';
+      }
+    };
+    </script>
+</body>
+</html>

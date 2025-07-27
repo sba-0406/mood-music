@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | MoodMusic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/themes.css" />
+</head>
+<body>
+<script type="module">
+import { renderNavbar } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
+
+renderNavbar('login');
+
+// --- Replace document.write with proper element building:
+const container = document.createElement('div');
+container.className = 'container fadeInUp';
+container.innerHTML = `
+  <h2>Login</h2>
+  <form id="loginForm" autocomplete="on">
+    <div class="form-group">
+      <label>Email address</label>
+      <input name="email" type="email" required autocomplete="email">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input name="password" type="password" required autocomplete="current-password">
+    </div>
+    <div id="loginError" style="color:#e73c7e;margin-bottom:1em;"></div>
+    <button class="btn" type="submit">Login</button>
+    <a href="signup.html" class="btn" style="background:#b4a4e3;">New? Signup</a>
+  </form>
+`;
+
+// Prefer inserting after navbar if you have dynamic .navbar
+const navbar = document.querySelector('.navbar');
+if (navbar) {
+  navbar.insertAdjacentElement('afterend', container);
+} else {
+  document.body.insertBefore(container, document.body.firstChild);
+}
+
+renderFooter();
+
+const form = document.getElementById('loginForm');
+form.onsubmit = async function(e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
+  const res = await fetch('/api/auth/login', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  });
+  const out = await res.json();
+  if(out.token) {
+    localStorage.token = out.token;
+    window.location = "index.html";
+  } else {
+    document.getElementById('loginError').innerText = out.error||'Invalid Login';
+  }
+};
+</script>
+</body>
+</html>
