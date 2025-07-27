@@ -121,8 +121,10 @@ Distributed under the MIT License.
 
 ### Screenshots
 
-*Include screenshots of Home page, Playlist page, and mood selector if possible*
 
-If you want, I can help you generate badges, add instructions for deployment, or expand sections!
 
-Just let me know!
+
+https://github.com/user-attachments/assets/21fe73df-f9bb-4fd7-a1b5-10dc3aa545b4
+
+
+
